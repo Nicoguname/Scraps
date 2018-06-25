@@ -1,0 +1,442 @@
+package Exercises;
+
+public class ClassRoomRatios {
+
+	public static void main(String[] args) {
+		// Declare variables
+        int boys;
+         int  girls;
+         int  totalStudents;
+         int  teacher;
+         int  teacherAssistant;
+         int  totalTeachers;
+         double percentageBoys;
+         double percentageGirls;
+         double studentTeacherRatio;
+         
+         // Initialise variables
+         boys = 11;
+         girls = 16;
+         teacher = 1;
+         teacherAssistant = 1;
+         studentTeacherRatio = 1.0;
+         
+         // Calculate totals
+         totalStudents = boys + girls;
+         totalTeachers = teacher + teacherAssistant;
+         percentageGirls = 100*(girls/(double)totalStudents);
+         studentTeacherRatio = ((double)totalStudents/totalTeachers);
+         
+         // Print results
+         System.out.println("Total Boys: " + boys);
+         System.out.println("Total Girls: " + girls);
+         System.out.println("Total Students: " + totalStudents);
+         System.out.println("What percentage of students are girls?");
+         System.out.println("RESULT: " + percentageGirls + "%" + " of the class are girls");
+         System.out.println("The Student-Teacher ratio is: " + studentTeacherRatio);
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+import java.util.Scanner;
+
+public class EvenOddNumber {
+
+	public static void main(String []args) {
+		// Create the scanner
+		Scanner in = new Scanner(System.in);
+		 
+		// Prompt the user to enter information
+			System.out.print("INPUT:  ");
+		        
+			int num = in.nextInt();
+			
+			// Test condition and print results
+		        if (num % 2 == 1) {
+		        	System.out.println("RESULT:  " + "Odd");
+		        }
+		        else {
+		            System.out.println("RESULT:  " + "Even");
+		        }
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class IDCardPrinter {
+
+	public static void main(String[] args) {
+		// Declare the variable
+		String name;
+		String id;
+		String state;
+		String expDate;
+		
+		// Initialise the variables
+		name = "Roger Williams";
+		id = "ST05GH23";
+		state = "CA";
+		expDate = "12/2023"; 
+		
+		// Use the variable to print the results
+		System.out.println("NAME: " + name);
+		System.out.println("ID: " + id);
+		System.out.println("STATE: " + state);
+		System.out.println("EXP. DATE: " + expDate);
+	
+	}
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+import java.util.Scanner;
+
+public class LetterGrade {
+
+	public static void main(String[] args) {
+		// Initialise variables  
+		String A;
+		String B;
+		String C;
+	    String D;
+		String F;
+		
+		// Create the Scanner        
+		Scanner in = new Scanner(System.in);
+		      
+		 // Prompt the user to enter information
+				System.out.print("ENTER GRADE:  ");
+        
+        int input = in.nextInt();
+           
+				System.out.println("INPUT:" + input + "%" );
+		   
+		// Test conditions and print results  
+			if (input >=90 && input <=100) {
+				System.out.println("RESULT:  " + "A");
+		      }
+		    else if (input >=80 && input <=89) {
+		        System.out.println("RESULT:  " + "B");
+		      }
+		    else if (input >=72 && input <=79) {
+		        System.out.println("RESULT:  " + "C");
+		      }
+		    else if (input >=64 && input <=71) {
+		        System.out.println("RESULT:  " + "D");
+		      }
+		    else if (input >=0 && input <=63)  {
+		    	 System.out.println("RESULT:  " + "F");
+		      }
+		    else  {
+		         System.out.println("INVALID NUMERIC GRADE");
+	          }
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class MarathonRaceTime {
+
+	public static void main(String[] args) {
+		// Declare variables
+		String marathonDistanceMeasurement ;      
+        double marathonDistance;
+        int offcialRaceTime;
+        int clockHours;
+        int clockMinutes;
+        int clockSeconds;
+        int raceHours1;
+        double raceMinutes1;
+        int raceSeconds1;
+        int averageRacetimeSecs;
+        int averageRacetimeMins;
+        double raceHours;
+        double raceMinutes;
+        double raceSeconds;       
+        double averagePacePerMile;
+        
+     // initialise variables
+        marathonDistanceMeasurement = "mile";
+        marathonDistance = 26.2;
+        clockMinutes = 60;
+        clockSeconds = 60;
+        clockHours = clockMinutes * clockSeconds;
+        offcialRaceTime = 7724;
+
+     // Perform calculations
+        raceHours1 = (offcialRaceTime / clockHours);
+        raceHours = ((double)offcialRaceTime / clockHours);
+        raceMinutes = 60 * (raceHours - raceHours1);
+        raceMinutes1 = Math.floor(60 * (raceHours - raceHours1));
+        raceSeconds = Math.floor((60 * (raceMinutes - raceMinutes1)));
+        averageRacetimeSecs = offcialRaceTime - (int)raceSeconds;
+        averageRacetimeMins = averageRacetimeSecs / clockSeconds;
+        averagePacePerMile = averageRacetimeMins / marathonDistance;
+        
+     // Perform results
+        System.out.println("What is his time in hours, minutes, and seconds?");
+        System.out.println("RESULT:  " + raceHours1 + "hrs:" + raceMinutes1 + "mins:" + raceSeconds + "secs");
+        System.out.println("What was his average pace per mile in minutes?");
+        System.out.println("RESULT:  " + "Average pace: " + averagePacePerMile + " per " + marathonDistanceMeasurement);
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+import java.util.Scanner;
+
+public class PositiveNegativeNumber {
+
+     public static void main(String []args) {
+    	  
+       // Create the Scanner  
+       Scanner in = new Scanner(System.in);
+	      
+	   // Prompt the user to enter information
+				System.out.print("ENTER NUMBER:  ");
+       
+       int input = in.nextInt();
+       // Test condition and print results 
+       
+        System.out.println("INPUT:  " + input);
+        
+        if (input > 0) {
+                System.out.println("RESULT:  " + "Positive");
+        }
+        else {
+                System.out.println("RESULT:  " + "Negative");
+        }
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class PriceComparison {
+	
+	public static void main(String[] args) {
+		
+		// Declaring the variable
+		String item;
+		String ourStore;
+		String competitor1Name;
+		String competitor2Name;
+		int price;
+		int price1;
+		int price2;
+		int save1;
+		int save2;
+		
+		// Declare and Define the variable
+		item = "Laptop";
+		ourStore = "Our Store";
+		competitor1Name = "Bestbuy";
+		competitor2Name = "Amazon";
+		price = 499;
+		price1 = 579;
+		price2 = 529;
+		save1 = price1 - price;
+		save2 = price2 - price;
+		
+		// Use the variables to print the results
+		System.out.println("Comparing prices for " + item);
+		System.out.println(ourStore + ":" + " $" + price);
+		System.out.println(competitor1Name + ":" + " $" + price1);
+		System.out.println("*Save " + "$" + save1);
+		System.out.println(competitor2Name + ":" + " $" + price2);
+		System.out.println("*Save " + "$" + save2);
+		
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class SavingsCalculator {
+
+	public static void main(String[] args) {
+		        
+		         // Declare variables
+		         double futureValue;
+		         int presentValue;
+		         double interestRate;
+		         int time;
+		         
+		         // Initialise variables
+		         futureValue = 0;
+		         presentValue = 20000;
+		         interestRate = 4.5;
+		         time = 15;
+		         
+		         // Perform calculations
+		         // PV * [1 + (0.045 * 15)]
+		        futureValue = presentValue * (1 + ((interestRate/100) * time));
+		        System.out.println("savings" + "(" + presentValue + ", " + interestRate + ", " + time + ")");
+		        System.out.println("RESULT: " + futureValue);
+		  
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class StockPurchaseCdCalculator {
+
+	public static void main(String[] args) {
+		             
+		// Declare variables
+		int totalSavings;
+		int stockPricePerShare;	
+		int buyShare;
+		int investCD;
+		     
+		// Initialise variables
+		totalSavings = 25000;
+		stockPricePerShare = 989;
+	    buyShare = totalSavings / stockPricePerShare;
+		investCD = totalSavings - (buyShare * stockPricePerShare);
+		
+		// Print the results
+		System.out.println("RESULT:  " + "Buy " + buyShare + " shares of stock");
+		System.out.println("Invest:  " + "$" + investCD + " in CD account");
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+public class TipRecommender {
+
+	public static void main(String[] args) {
+		double tabAmount = 33.57;
+		String serviceQuality = "Great";
+		
+		// Call the getTipAmount Function and print result
+		double tip  = getTipAmount(tabAmount, serviceQuality);
+		System.out.println("computeTip" + "(" + tabAmount + ", " + "'" + serviceQuality+ "'" + ")");
+		System.out.println("Result: " + tip);
+		
+	} 
+		// Define the getTipAmount Function
+		// Parameters: tabAmount, serviceQuality
+    	private static double getTipAmount(double tabAmount, String serviceQuality) {   
+    		
+    		// Declare and initialise variables  	
+    		double poorTipPercent = 16;
+        	double goodTipPercent = 22;
+        	double greatTipPercent = 26;
+        	double poorTip = 0;
+        	double goodTip = 0;
+        	double greatTip = 0;
+        	
+        	// Test conditions
+        	if (serviceQuality == "Poor") {
+	   		poorTip = tabAmount * (poorTipPercent/100);
+	    	}
+        	else if (serviceQuality == "Good") {
+	   		goodTip = tabAmount * (goodTipPercent/100);
+        	}
+   
+        	else if (serviceQuality == "Great") {
+	   		greatTip = tabAmount * (greatTipPercent/100);
+        	}
+        	else {
+        	System.out.println("ERROR: " + "COULD NOT READ TAB AMOUNT");
+        	}
+        
+        	//Add return statement
+		return greatTip;
+        
+    }
+}
+
+------------------------------------------------------------------------------------------------------------
+
+package Exercises;
+
+import java.util.Scanner;
+
+public class WeekDay {
+
+	public static void main(String[] args) {
+		// Declare and initialise the variables 
+		String day1 = "Sunday";
+        String day2 = "Monday";
+        String day3 = "Tuesday";
+        String day4 = "Wednesday";
+        String day5 = "Thursday";
+        String day6 = "Friday";
+        String day7 = "Saturday";
+        
+        // Create the Scanner      
+       Scanner in = new Scanner(System.in);
+    
+       // Prompt the user to enter information
+       System.out.print("ENTER DAY NUMBER:  ");
+       int input = in.nextInt();
+		      	System.out.println("INPUT:" + input);
+	   
+		// Test conditions and print results      	        
+        if (input == 1) {
+                System.out.println("RESULT:  " + day1);
+                }
+        else if (input == 2)
+                {
+                System.out.println("RESULT:  " + day2);
+                }
+        else if (input == 3)
+                {
+                System.out.println("RESULT:  " + day3);
+                }
+        else if (input == 4)
+                {
+                System.out.println("RESULT:  " + day4);
+                }
+        else if (input == 5)
+                {
+                System.out.println("RESULT:  " + day5);
+                }
+        else if (input == 6)
+                {
+                System.out.println("RESULT:  " + day6);
+                }
+        else if (input == 7)
+                {
+                System.out.println("RESULT:  " + day7);
+                }
+        else {
+            System.out.println("INVALID WEEKDAY NUMBER");
+            }
+
+	}
+
+}
+
+------------------------------------------------------------------------------------------------------------
