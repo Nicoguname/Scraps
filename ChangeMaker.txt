@@ -1,0 +1,87 @@
+package WeekOneProject1;
+
+import java.util.Scanner;
+
+public class ChangeMaker {
+
+	public static void main(String[] args) {
+		
+		/* Problem statement:
+		Determine Input and Output 
+		Typed input by user: amount of change requested (an integer between 1 and 99) 
+		Printed output:  
+		Number of quarters given  
+		Number of dimes given  
+		Number of nickels given  
+		Number of pennies given
+		*/
+		
+		// Create the Scanner, prompt the user for input and call the changeBreakDown method to compute the change
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter amount of change requested by the customer: ");
+		int giveChange = input.nextInt();
+		int change = changeBreakDown(giveChange);
+		
+	}
+	
+	public static int changeBreakDown(int newX) {
+		
+		// Declare, define and initialize variables to be used in the computation
+		int x = 100; // 100 cents equals 1 dollar
+		int q = x / 4;
+		int d = x / 10;
+		int n = x / 20;
+		int p = x / 100;
+		double centsRemainInQ = 0;
+		double centsRemainInD = 0;
+		double centsRemainInN = 0;
+		double centsRemainInP = 0;
+		
+		// condition to ensure that change requested is within 1 to 99 cents
+		if (newX <= 0 || newX >= 100) { 
+			System.out.println("ERROR! Please enter a valid change between 1 and 99 cents.");
+		}
+		
+		// conditional statement to process change when the request is between 1 and 99 cents and print out results
+		
+			else if (newX >= 1 || newX <= 99) { 
+				
+				System.out.println("Breakdown of change to give to customer is given below:");
+				
+				/* determine the total number of quarters to give and subtract the amount from the change 
+					requested to process for other smaller denominations and print out results*/
+				
+				int newQ1 = newX / q;
+				double totalcentsAlreadyGivenQ = Math.floor(newQ1) * q;
+				centsRemainInD = newX - (int) totalcentsAlreadyGivenQ; 
+				System.out.println("Number of quarters given is: " + newQ1);
+				
+				/* determine the total number of dimes to give and subtract the amount from the change 
+				requested to process for other smaller denominations and print out results*/
+				
+				int newD1 = (int) centsRemainInD / d;
+				double totalcentsAlreadyGivenD = Math.floor(newD1) * d;
+				centsRemainInN = centsRemainInD - totalcentsAlreadyGivenD;
+				System.out.println("Number of dimes given is: " + newD1);
+				
+				/* determine the total number of nickels to give and subtract the amount from the change 
+				requested to process for other smaller denominations and print out results*/
+				
+				int newN1 = (int) centsRemainInN / n;
+				double totalcentsAlreadyGivenN = Math.floor(newN1) * n;
+				centsRemainInP = centsRemainInN - totalcentsAlreadyGivenN;
+				System.out.println("Number of nickels given is: " + newN1);
+				
+				/* determine the total number of pennies to give after subtracting the total amount given in from higher 
+				 denominations and print out results*/
+								
+				int newP1 = (int) centsRemainInP / p;
+				double totalcentsAlreadyGivenP = Math.floor(newP1) * n;
+				System.out.println("Number of pennies given is: " + newP1);
+				
+			}
+							
+		return newX;
+	}
+	
+}
